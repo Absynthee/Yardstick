@@ -1,0 +1,105 @@
+/* css reset start */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* css reset end */
+
+h1 {
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 600;
+  margin-block-end: 10px;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 75ch;
+  font-size: 1.2rem;
+  margin: 20px auto;
+
+}
+
+.gap > li {
+  padding-block: 20px;
+}
+ul {
+  li {
+    padding-block: 4px;
+  }
+}
+
+.align-items-center {
+  height: 100%;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: white;
+  --bs-btn-border-color: rgb(237, 87, 17);
+  --bs-btn-hover-bg: rgb(237, 87, 17);
+  --bs-btn-hover-border-color: rgb(237, 87, 17);
+}
+
+.text-primary {
+  color: rgb(237, 87, 17) !important;
+}
+
+.austin {
+  text-align: center;
+  font-weight: 600;
+  color: rgb(237, 87, 17);
+  font-size: 1.2rem;
+}

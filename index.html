@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Yardstick Questions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<h1 class="text-center pt-4">Yardstick Development Questions</h1>
+<p class="austin">Austin Spillman | austin.spillman@gmail.com</p>
+    <ol class="gap">
+        <li>
+            <h4>How would you build this section out utilising bootstrap v5? Please also describe how you would input
+                the content into WordPress using the plugin ACF (hint: the icons with text are also used within a
+                separate timeline block on another section of the site!)</h4>
+<img src="https://lh5.googleusercontent.com/Yg6yzHcgztkCeY6laSkYU0P45u8MxKXhVexc-jZ0cXslYYtkkD2oTNfhpV_FD_aEfElVF0wtIMqrrkd0hY3YrURjsyvcc4Z8Hf3sBLDkcwANkXGuwYMxVDmI1CDQI4uyYw=w512" alt=""><br>
+<p>Without editing the css of the bootstrap elements, just following the layout as closely as possible, the code block for this would be something like the following. However, you would have to adjust some of the css classes to match the font and change the primary colour. Additionally, it would be much easier to write custom css from scratch without using bootstrap for more control over each element. <code>text-light</code> and <code>bg-dark</code> wouldn't be necessary if the default font color was changed to white and the container had a background image like in the preview.</p>
+<pre><code class="language-html">&lt;div class="container-fluid px-4 text-light bg-dark"&gt;
+    &lt;div class="row py-5 gx-5"&gt;
+      &lt;div class="col-4"&gt;
+        &lt;h3&gt;Lorem ipsum dolor&lt;/h3&gt;
+        &lt;button type="button" class="btn btn-outline-primary 
+        rounded-0 text-uppercase"&gt;
+          &lt;p class="small m-0"&gt;Lorem Ipsum&lt;/p&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="col-8"&gt;
+        &lt;div class="row gx-2 text-center align-items-center"&gt;
+          &lt;div class="col-3"&gt;
+            &lt;img src="" class="img-fluid" alt="icon"&gt;
+            &lt;span class="text-primary small"&gt;01&lt;/span&gt;
+            &lt;p&gt;title&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="col-3"&gt;
+            &lt;img src="" class="img-fluid" alt="icon"&gt;
+            &lt;span class="text-primary small"&gt;02&lt;/span&gt;
+            &lt;p&gt;title&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="col-3"&gt;
+            &lt;img src="" class="img-fluid" alt="icon"&gt;
+            &lt;span class="text-primary small"&gt;03&lt;/span&gt;
+            &lt;p&gt;title&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="col-3"&gt;
+            &lt;img src="" class="img-fluid" alt="icon"&gt;
+            &lt;span class="text-primary small"&gt;04&lt;/span&gt;
+            &lt;p&gt;title&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;                
+</code></pre>
+
+                <div class="container-fluid px-4 my-4 text-light bg-dark">
+                    <div class="row py-5 gx-5">
+                      <div class="col-4">
+                        <h3>Lorem ipsum dolor</h3>
+                        <button type="button" class="btn btn-outline-primary rounded-0 text-uppercase"><p class="small m-0">Lorem Ipsum</p></button>
+                      </div>
+                      <div class="col-8">
+                        <div class="row gx-2 text-center align-items-center">
+                          <div class="col-3">
+                            <img src="" class="img-fluid" alt="icon">
+                            <span class="text-primary small">01</span>
+                            <p>title</p>
+                          </div>
+                          <div class="col-3">
+                            <img src="" class="img-fluid" alt="icon">
+                            <span class="text-primary small">02</span>
+                            <p>title</p>
+                          </div>
+                          <div class="col-3">
+                            <img src="" class="img-fluid" alt="icon">
+                            <span class="text-primary small">03</span>
+                            <p>title</p>
+                          </div>
+                          <div class="col-3">
+                            <img src="" class="img-fluid" alt="icon">
+                            <span class="text-primary small">04</span>
+                            <p>title</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                
+                  <p>As for inputting the content into WordPress using <strong>ACF</strong> to reuse the structure dynamically, the process would be something like:</p>
+                  <ol class="no-gap">
+                    <li>Create a new Field Group for the layout. Make the Field Type <code>Flexible Content</code> if using the pro version, or <code>Group</code> if using the free version. Flexible Content makes the layout have more modular flexibility, although Group should also work.</li>
+                    <li>Create sub-fields for the content in each column - title text, button text and button link for Column 1. </li>
+                    <li>Create a layout for the reusable Column 2 section that can be saved as its own block to be reused seperately. Create a new Field Group for this column and populate with a <code>Repeater Field</code>.</li>
+                    <li>Inside the Repeater Field, add an image field, text or number field for the number, and text field for the title, for each icon group.</li>
+                    <li>This should allow for Column 1 to be flexible and editible when used, and Column 2 to be dynamically reusable and customisable when needed to be used seperately.</li>
+                  </ol>
+                </li>
+                <hr>
+        <li>
+            <h4>Please fix the error(s) within this piece of code:</h4>
+            <p>The fixed code:</p>
+            <pre><code class="language-js">(function ($) {
+  $(document).ready(function () {
+    $(".accordion__heading-wrapper").on("click", function () {
+      var $parent = $(this).closest(".accordion__item");
+      var parentOpen = $parent.hasClass("open");
+              
+      $(this)
+        .closest(".accordion")
+        .find(".accordion__item")
+        .removeClass("open");
+              
+      if (!parentOpen) {
+        $parent.addClass("open");
+      }
+    });
+  });
+});</code></pre>
+<p>The changes that were made: </p>
+                <ul>
+                    <li>Fixed the function to be followed by brackets so it operates properly</li>
+                    <li>Fixed the typo in <code>removeClass</code></li>
+                    <li>Added <code>$</code> in front of <code>parent</code> in the var to declare it as a jQuery object as it is referenced as one later</li>
+                    <li>Removed the brackets around <code>parent</code> in the if statement as it is not needed and could cause issues</li>
+                </ul>
+        </li><hr>
+        <li>
+            <h4>When should you use !important in your (S)CSS?</h4>
+            <p>Ideally, never. It overrides styles and could cause issues or make stylesheets harder to maintain. It is better to target specificity on elements where a change is needed. </p>
+        </li>
+        <hr>
+        <li>
+            <h4>Which breakpoints would you use to test for responsiveness? Give reasoning for this.</h4>
+            <p>I test everything from 4k downwards. Most sites will usually have a max-width of <code>1920px</code> or <code>1440px</code>. A good start for breakpoints are <code>1200px</code> at the largest sizes. For medium sized screens a breakpoint of <code>768px</code> is ideal (and is also a good time to switch over to mobile navigation) and <code>480px</code> for the smallest of screens. All content should be readable down to <code>320px</code> width without the page overflowing.</p>
+            <p>These are usually just guides, as it depends on the content on the page as to where and when it needs to break. Pages with a lot of dynamic, responsive content using modern css may need to break less. There may also be situations where a lot of breakpoints are required - and this will vary on a case by case basis. </p>
+        </li>
+        <hr>
+        <li>
+            <h4>How would you make this section responsive / layout on mobile?</h4>
+            <img src="https://lh3.googleusercontent.com/5vFIjxPClzFTYrAYoJ-X0x68M4yS6xZGcag-J4X2yj-O8ogGppBlB3aptKVRs9p2zcPz2Q8QMoE-2ZhzhNKtP82oANTOQYC2YCOSCZKcyxjQMSmrcP6x8w4VPXlKt428VA=w669" alt="">
+            <p>How this would look on mobile would depend on the overall design of the site and how that section was implemented. The easiest way to adjust it for mobile would be to use flex and either <code>flex-wrap: wrap</code> or <code>flex-direction: column</code>. To save some horizontal space, the progress titles could be hidden and only display the icon to represent the status of the progress bar. If it's just an image it would be easy to swap it out by creating a class that only shows at a certain breakpoint. For example:</p>
+            <pre><code>@media screen and (max-width: 768px) {
+  .large-img {
+     display: none;    
+  }  
+  .small-img {
+     display: block;    
+  }
+}</code></pre>
+        </li>
+        <hr>
+        <li>
+            <h4>Bonus: Mac or Windows?</h4>
+            <p>Windows. But honestly either is fine!</p>
+        </li>
+    </ol>
+
+</body>
+
+<script>hljs.highlightAll();</script>
+
+</html>
