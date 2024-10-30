@@ -70,16 +70,15 @@ ol {
   max-width: 75ch;
   font-size: 1.2rem;
   margin: 20px auto;
-
 }
 
 .gap > li {
   padding-block: 20px;
 }
-ul {
-  li {
-    padding-block: 4px;
-  }
+
+ul > li,
+.no-gap > li {
+  padding-block: 4px;
 }
 
 .align-items-center {
